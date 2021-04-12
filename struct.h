@@ -12,7 +12,7 @@
 #ifndef STRUCT_H_
 #define STRUCT_H_
  typedef struct {
-	char name[50];
+	char* name;
 	unsigned int ID;
 	unsigned int birth_day;
 	unsigned int birth_month;
