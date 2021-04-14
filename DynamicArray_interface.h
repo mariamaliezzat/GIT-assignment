@@ -4,7 +4,7 @@
  *
  * Description: functions declaration used for the dynamic array
  *
- * Date:        4/13/2021
+ * Date:        4/14/2021
  *
  ******************************************************************************/
  

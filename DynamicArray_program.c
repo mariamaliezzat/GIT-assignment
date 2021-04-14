@@ -4,13 +4,13 @@
  *
  * Description: functions implementation used for the dynamic array
  *
- * Date:        4/13/2021
+ * Date:        4/14/2021
  *
  ******************************************************************************/
  #include <stdio.h>
  #include <stdlib.h>
- #include <struct.h>
- #include <DynamicArray.h>
+ #include "struct.h"
+ #include "DynamicArray_interface.h"
  
  int num_students=0;
  students* first_student;
@@ -19,13 +19,24 @@
  
  void void_DynArr_insertBeginning(void)
   {
-	students* temp;
+	students* temp;  int nameLength; char* name;
 	num_students++;                                                         //increasing number of the students
 	  
 	students newStd;                                                        //creat new student
 	
-	//printf("Please enter the student's name\n");                          //getting the information of the student
-	//fgets(newStd.name, 50, stdin);
+	printf("Enter the number of characters for the name (max 50): ");        //getting the information of the student
+	scanf("%d",&nameLength);
+	getchar();
+	if(nameLength<= 50)
+	{
+		printf("Please enter the student's name\n"); 
+		name=(char*)malloc(sizeof(char)+sizeof(char)*nameLength);
+		fgets(name, nameLength+1, stdin);
+		newStd.name=name;
+	}
+	else {printf("invalid name length"); }
+	                      
+	
 	printf("Please enter the student's ID\n");
 	scanf("%d",&newStd.ID);
 	printf("Please enter the student's birth day\n");
@@ -47,7 +58,7 @@
 	{
 		first_student=(students*)realloc(first_student, num_students * sizeof(students));       //increasing the size of the array 
 		
-		temp=first_student+num_students-1;                                                      //pointer to the last place
+		temp=first_student+num_students-1;
 		
 		for(int i=0; i < num_students; i++)
 		{
@@ -62,7 +73,7 @@
   
    void void_DynArr_insertMiddle(void)
  {
-	 int index;
+	 int index;           int nameLength; char* name;
 	students* temp;
 	students* ptrNewStd;
 	num_students++;                                                         //increasing number of the students
@@ -72,8 +83,17 @@
 	printf("Please enter the index\n");
 	scanf("%d",&index);
 	
-	//printf("Please enter the student's name\n");                          //getting the information of the student
-	//fgets(newStd.name, 50, stdin);
+	printf("Enter the number of characters for the name (max 50): ");        //getting the information of the student
+	scanf("%d",&nameLength);
+	getchar();
+	if(nameLength<= 50)
+	{
+		printf("Please enter the student's name\n"); 
+		name=(char*)malloc(sizeof(char)+sizeof(char)*nameLength);
+		fgets(name, nameLength+1, stdin);
+		newStd.name=name;
+	}
+	else {printf("invalid name length"); }
 	printf("Please enter the student's ID\n");
 	scanf("%d",&newStd.ID);
 	printf("Please enter the student's birth day\n");
@@ -101,13 +121,23 @@
  
  void void_DynArr_insertEnd(void)
  {
-	 students* temp;
-	num_students++;                                                         //increasing number of the students
+	 students* temp;          int nameLength; char* name;
+	num_students++;                                                       //increasing number of the students
 	  
-	students newStd;                                                        //creat new student
+	students newStd;                                                      //creat new student
 	
-	//printf("Please enter the student's name\n");                          //getting the information of the student
-	//fgets(newStd.name, 50, stdin);
+	printf("Enter the number of characters for the name (max 50): ");        //getting the information of the student
+	scanf("%d",&nameLength);
+	getchar();
+	if(nameLength<= 50)
+	{
+		printf("Please enter the student's name\n"); 
+		name=(char*)malloc(sizeof(char)+sizeof(char)*nameLength);
+		fgets(name, nameLength+1, stdin);
+		newStd.name=name;
+	}
+	else {printf("invalid name length"); }
+	
 	printf("Please enter the student's ID\n");
 	scanf("%d",&newStd.ID);
 	printf("Please enter the student's birth day\n");
@@ -119,10 +149,10 @@
 	printf("Please enter the student's score\n");
 	scanf("%d",&newStd.score);
 	
-	first_student=(students*)realloc(first_student, num_students * sizeof(students));        //increasing the size of the array 
+	first_student=(students*)realloc(first_student, num_students * sizeof(students));       //increasing the size of the array 
 	
 	temp=first_student+num_students-1;                                                       //pointer to the last student
-	*temp=newStd;                                                                            //assign the information of the new student in the reserved memory
+	*temp=newStd;                                                                          //assign the information of the new student in the reserved memory
 		
 	
  }
@@ -132,7 +162,7 @@
 	  students* temp=first_student;
 	  for(int i=0; i<num_students; i++)
 	  {
-		 // printf("name: %c\n",(*temp).name);
+		  printf("name: %s\n",(*temp).name);
 		  printf("%d\n",(*temp).ID);
 		  printf("%d\n",(*temp).birth_day);
 		  printf("%d\n",(*temp).birth_month);
