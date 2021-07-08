@@ -16,7 +16,7 @@
  students* first_student;
  
  
- 
+ /*
  void void_DynArr_insertBeginning(void)
   {
 	students* temp;  int nameLength; char* name;
@@ -69,41 +69,15 @@
 	
 	}
 	
-  }
+  }*/
   
-   void void_DynArr_insertMiddle(void)
+   void void_DynArr_insertMiddle(students* newStd,unsigned int index)
  {
-	 int index;           int nameLength; char* name;
 	students* temp;
 	students* ptrNewStd;
 	num_students++;                                                         //increasing number of the students
 	  
-	students newStd;                                                        //creat new student
-	
-	printf("Please enter the index\n");
-	scanf("%d",&index);
-	
-	printf("Enter the number of characters for the name (max 50): ");        //getting the information of the student
-	scanf("%d",&nameLength);
-	getchar();
-	if(nameLength<= 50)
-	{
-		printf("Please enter the student's name\n"); 
-		name=(char*)malloc(sizeof(char)+sizeof(char)*nameLength);
-		fgets(name, nameLength+1, stdin);
-		newStd.name=name;
-	}
-	else {printf("invalid name length"); }
-	printf("Please enter the student's ID\n");
-	scanf("%d",&newStd.ID);
-	printf("Please enter the student's birth day\n");
-	scanf("%d",&newStd.birth_day);
-	printf("Please enter the student's birth month\n");
-	scanf("%d",&newStd.birth_month);
-	printf("Please enter the student's birth year\n");
-	scanf("%d",&newStd.birth_year);
-	printf("Please enter the student's score\n");
-	scanf("%d",&newStd.score);
+
 	
 	first_student=(students*)realloc(first_student, num_students * sizeof(students));            //increasing the size of the array 
 	ptrNewStd=first_student+index-1;                                                             //pointer to the required place
@@ -115,11 +89,11 @@
 			*temp=*(temp-1);                                                                     //shift the array into right to put the new student at the beginning 
 			temp--;
 		}
-	*ptrNewStd=newStd;	
+	*ptrNewStd=*newStd;	
  }
  
  
- void void_DynArr_insertEnd(void)
+/* void void_DynArr_insertEnd(void)
  {
 	 students* temp;          int nameLength; char* name;
 	num_students++;                                                       //increasing number of the students
@@ -156,7 +130,7 @@
 		
 	
  }
-  
+  */
    void void_DynArr_printArr(void)
   {
 	  students* temp=first_student;
@@ -171,5 +145,3 @@
 		  temp++;
 	  }
   }
-  
-  
