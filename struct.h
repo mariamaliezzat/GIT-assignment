@@ -18,6 +18,6 @@
 	unsigned int birth_month;
 	unsigned int birth_year;
 	signed int score;
-	
+
 }students;
-#endif 
+#endif
