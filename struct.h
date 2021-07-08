@@ -4,7 +4,7 @@
  *
  * Description: Structure to hold student information
  *
- * Date:        4/12/2021
+ * Date:       4/12/2021
  *
  ******************************************************************************/
 
