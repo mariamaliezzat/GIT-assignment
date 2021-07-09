@@ -89,7 +89,7 @@ int main()
                 case 1:
                     /*execution time for insertion at beginning in linked list*/
                     start= clock();
-                    Add_Student (1,myStudent1);
+                    Add_Student (0,myStudent1);
                     delay(5);
                     stop= clock();
                     time_calculated = (double)(stop - start) * 1000.0 / CLOCKS_PER_SEC;
@@ -152,9 +152,11 @@ int main()
                     break;
                 case 4:
 
+                        printf("size taken by the structure %d\n",sizeof(students));
                     break;
                 case 5:
 
+                        printf("size taken by the node of the linked list %d\n",sizeof(nodes));
                     break;
                 default:
                     return 0;
