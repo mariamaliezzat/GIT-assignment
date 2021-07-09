@@ -7,7 +7,7 @@
 #define MAX_NAME_LENGTH 	50
 
 void getStudentData(students* newStudentPtr);
-
+#include "DynamicArray_interface.h"
 int main()
 {
     printf("*************************************************\n\twelcome to our repository\n\n");
