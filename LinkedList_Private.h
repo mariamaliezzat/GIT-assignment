@@ -12,9 +12,9 @@ struct nodes_t
 	nodes *next;
 };
 
-nodes* head = NULL;
 
-unsigned int numberOfStudents;
+
+
 /************************************************************************************/
 
 

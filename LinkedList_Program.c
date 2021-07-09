@@ -2,11 +2,11 @@
 #include <stdlib.h>
 #include "struct.h"
 #include "LinkedList_Private.h"
-
+unsigned int numberOfStudents=0;
 /************************************************************************************/
 /* 						  PUBLIC FUNCTIONS IMPLEMENTATION   						*/
 /************************************************************************************/
-
+nodes* head = NULL;
 void Add_Student (int index, students newStudentData)
 {
 	/* If an invalid index was entered */
