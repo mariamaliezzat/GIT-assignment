@@ -293,7 +293,7 @@ int main()
                     /*execution time for insertion at last in linked list*/
 
                     start= clock();
-                    Add_Student (number_Of_Students_list-1,myStudent1);
+                    Add_Student (number_Of_Students_list,myStudent1);
                     //delay(5);
                     stop= clock();
                     time_calculated = (double)(stop - start) * 1000.0 / CLOCKS_PER_SEC;
