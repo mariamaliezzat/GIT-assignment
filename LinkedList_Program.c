@@ -7,6 +7,7 @@ unsigned int numberOfStudents=0;
 /* 						  PUBLIC FUNCTIONS IMPLEMENTATION   						*/
 /************************************************************************************/
 nodes* head = NULL;
+nodes* tail = NULL;
 void Add_Student (int index, students newStudentData)
 {
 	/* If an invalid index was entered */
@@ -26,12 +27,20 @@ void Add_Student (int index, students newStudentData)
 		{
 			newNode -> next = NULL;
 			head = newNode;
+			tail = newNode;
 		}
-		/* If the new node to be added at the front of the list */
+		/* If the new node is to be added at the front of the list */
 		else if (index == ZERO)
 		{
 			newNode -> next = head;
 			head = newNode;
+		}
+		/* If the new node is to be added at the end of the list */
+		else if (index == numberOfStudents)
+		{
+			newNode -> next = NULL;
+			tail -> next = newNode;
+			tail = newNode;
 		}
 		/* For any arbitrary index in the list */
 		else

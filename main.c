@@ -1,3 +1,20 @@
+/****************************************************************************/
+/*										Student 1							*/
+/* Name: Omar Ahmed Fahmy 													*/
+/* Sec:  3																	*/
+/* BN:	 10																	*/
+/****************************************************************************/
+/*										Student 2							*/
+/* Name: Mariam Ali Ezzat Darwish											*/
+/* Sec:  4																	*/  
+/* BN: 	 9																	*/
+/****************************************************************************/
+/*										Student 3							*/
+/* Name: Aliaa Mohamed Abdelati Bakr										*/
+/* Sec:  3																	*/  
+/* BN: 	 6																	*/
+/****************************************************************************/
+
 //includes
 #include <stdio.h>
 #include <stdlib.h>
@@ -30,25 +47,26 @@ int main()
     scanf("%d",&number_Of_Students_array);
     /*Create Linked List*/
     //getStudentData(&myStudent1);
-    printf("creating list of %d students n",number_Of_Students_list);
+    printf("creating list of %d students \n",number_Of_Students_list);
     for(i=0;i<number_Of_Students_list;i++)
     {
         //getStudentData(&myStudent1);
         Add_Student (i,myStudent1);
     }
     printf ("List created\n");
-    Print_List();
+    //Print_List();
 
 
     /*Create Dynamic Array*/
-    printf("creating Dynamic Array of %d students \nPrinting List\n",number_Of_Students_array);
+    printf("creating Dynamic Array of %d students \n",number_Of_Students_array);
     for(i=1;i<=number_Of_Students_array;i++)
     {
         //getStudentData(&myStudent1);
         void_DynArr_insertMiddle(&myStudent1,i);
     }
-    printf (" Dynamic Array created\nPrinting Dynamic Array\n");
-    void_DynArr_printArr();
+    printf (" Dynamic Array created\n");
+    //void_DynArr_printArr();
+	
     while(1)
     {
         printf("enter your choice \n1 Insertion \n2 Calculation (time and size)\n3 exit\n");
@@ -66,7 +84,7 @@ int main()
                 printf("Enter Index\n");
                 scanf("%d",&index);
                 Add_Student (index,myStudent1);
-                Print_List();
+                //Print_List();
                 break;
             case 2:
                 /*Insertion in Dynamic Array*/
@@ -74,7 +92,7 @@ int main()
                 printf("Enter Index\n");
                 scanf("%d",&index);
                 void_DynArr_insertMiddle(&myStudent1,index);
-                void_DynArr_printArr();
+                //void_DynArr_printArr();
                 break;
             default:
                 return 0;
@@ -91,7 +109,7 @@ int main()
                     start= clock();
                     Add_Student (0,myStudent1);
                     delay(5);
-                    stop= clock();
+                    stop = clock();
                     time_calculated = (double)(stop - start) * 1000.0 / CLOCKS_PER_SEC;
                     printf("execution time for insertion at beginning in linked list(ms): %f \n",time_calculated-5000);
                     number_Of_Students_list++;
@@ -138,16 +156,16 @@ int main()
                     delay(5);
                     stop= clock();
                     time_calculated = (double)(stop - start) * 1000.0 / CLOCKS_PER_SEC;
-                    printf("execution time for insertion at beginning in linked list(ms): %f \n",time_calculated-5000);
+                    printf("execution time for insertion at the end in linked list(ms): %f \n",time_calculated-5000);
                     number_Of_Students_list++;               
+					
                     /*execution time for insertion at last in Dynamic Array*/
-
                     start= clock();
                     void_DynArr_insertMiddle(&myStudent1,number_Of_Students_array);
                     delay(5);
                     stop= clock();
                     time_calculated= (double)(stop - start) * 1000.0 / CLOCKS_PER_SEC;
-                    printf("execution time for insertion at beginning in array(ms): %f \n", time_calculated-5000);
+                    printf("execution time for insertion at the end in array(ms): %f \n", time_calculated-5000);
                     number_Of_Students_array++;
                     break;
                 case 4:

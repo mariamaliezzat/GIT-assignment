@@ -83,13 +83,20 @@
 	ptrNewStd=first_student+index-1;                                                             //pointer to the required place
 	temp=first_student+num_students-1;                                                           //pointer to the last place
 		
-	
-	for(int i=0; (i < num_students)&&(temp != ptrNewStd); i++)
+	if (index==num_students)
+	{
+		*temp=*newStd;
+	}
+	else
+	{
+		for(int i=0; (i < num_students)&&(temp != ptrNewStd); i++)
 		{
-			*temp=*(temp-1);                                                                     //shift the array into right to put the new student at the beginning 
+			temp=(temp-1);                                                                     //shift the array into right to put the new student at the beginning 
 			temp--;
 		}
-	*ptrNewStd=*newStd;	
+		*ptrNewStd=*newStd;	
+	}
+	                                                                          //assign the information of the new student in the reserved memory
  }
  
  
